@@ -63,10 +63,11 @@ Java has many ways to implement read and write files, which way is the fast? Jav
 concurrency, which way is the fastest way. Acutally, the answer will be different if the CPU, memory, disk bandwidth
 data size and data location. There are a lot discussion on this topic. A couple of graphs from articles listed at
 Reference below.
-
+```
 ![alt tag](src/main/resources/File-Indexing.jpg)
 ![alt tag](src/main/resources/3Fig1.png)
 
+```
 Limitation:
 With limited time, some codes are duplicated and not optimized
 －－－－－－－－－－－－

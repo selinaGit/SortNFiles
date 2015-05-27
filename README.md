@@ -57,7 +57,6 @@ mvn exec:java -Dexec.mainClass="dev.fun.Main" -Dexec.args="-g ./output/"
 mvn exec:java -Dexec.mainClass="dev.fun.Main" -Dexec.args="-s ./input/"
 mvn exec:java -Dexec.mainClass="fork.join.MergeMain" -Dexec.args="-s ./input/"
 
-
 Difficulty:
 The difficulty for this project is not to provide a solution. The most hard part is to provide a fastest solution.
 Java has many ways to implement read and write files, which way is the fast? Java has a few ways to implement
@@ -65,10 +64,8 @@ concurrency, which way is the fastest way. Acutally, the answer will be differen
 data size and data location. There are a lot discussion on this topic. A couple of graphs from articles listed at
 Reference below.
 
-/src/main/resources/File-Indexing.jpg
-
-/src/main/resources/3Fig1.png
-
+![Alt Text](/src/main/resources/File-Indexing.jpg)
+![Alt Text](/src/main/resources/3Fig1.png)
 
 Limitation:
 With limited time, some codes are duplicated and not optimized

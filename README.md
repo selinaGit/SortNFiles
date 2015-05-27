@@ -64,8 +64,8 @@ concurrency, which way is the fastest way. Acutally, the answer will be differen
 data size and data location. There are a lot discussion on this topic. A couple of graphs from articles listed at
 Reference below.
 
-![alt tag](/src/main/resources/File-Indexing.jpg)
-![alt tag](/src/main/resources/3Fig1.png)
+![alt tag](src/main/resources/File-Indexing.jpg)
+![alt tag](src/main/resources/3Fig1.png)
 
 Limitation:
 With limited time, some codes are duplicated and not optimized

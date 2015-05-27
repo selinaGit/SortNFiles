@@ -1,0 +1,13 @@
+fork/join/Fold.class
+dev/fun/DocumentReader.class
+dev/fun/ListCompartor.class
+fork/join/FoldTask.class
+dev/fun/Main.class
+dev/fun/Util.class
+fork/join/Document.class
+fork/join/DocumentsMerger.class
+dev/fun/FoldReader.class
+dev/fun/FilesMerger.class
+fork/join/MergeMain.class
+dev/fun/DocumentWriter.class
+fork/join/DocumentSortTask.class

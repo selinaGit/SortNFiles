@@ -22,17 +22,16 @@ Solution:
 I implemented write files by fork/join version. The speed was much slower than this version, so I deleted it.
 
 2. Use two different way to implement read, sort, merge sort to new files
-1) Use Java 8 Stream to read file to stream and sort it to Stream at dev.stream.MergeSortFilesMain.
-2) Use fork-join to sort file  at fork.join.MergeSortFilesForkJoinMain
+1) Use Java 8 Stream to read file to stream and sort it to Stream at dev.fun.Main.
+2) Use fork-join to sort file  at fork.join.MergeMain
 
 3. Algorithm
 1). Sort each file
 2). Merge all sorted LinkedList contain file data by Priority Queue
 
 
-
-
-There are a lot discussion on Stream or Fork-Join. The performance could be vary according to CPU, Memory size and data distributed ways
+There are a lot discussion on Stream or Fork-Join. The performance could be vary according to CPU, Memory size and data 
+sizes and locations
 
 ATTENTION:
 This project need JDK 8.0 to support to run.
@@ -63,7 +62,7 @@ mvn exec:java -Dexec.mainClass="fork.join.MergeMain" -Dexec.args="-s ./input/"
 Difficulty:
 The difficulty for this project is not to provide a solution. The most hard part is to provide a fastest solution.
 Java has many ways to implement read and write files, which way is the fast? Java has a few ways to implement
-concurrency, which way is the fastest way. Acutally, the answer will be different if the CPU, memory, disk bandwidth
+concurrency, which way is the fastest way. Actually, the answer will be different if the CPU, memory, disk bandwidth
 data size and data location. There are a lot discussion on this topic. A couple of graphs from articles listed at
 Reference below.
 ```
@@ -72,7 +71,8 @@ Reference below.
 
 ```
 Limitation:
-With limited time, some codes are duplicated and not optimized
+With limited time, some codes are duplicated and not optimized, such as use config file instead of Hard code at .java file.
+the method and variable naming could be better.
 
 Result:
 Writing 100 files take around 4-6 seconds
@@ -81,7 +81,7 @@ Soring 10 files take around 0.91 - 2.1 Seconds by fork-join framework
 
 Since I tested this by my personal computer, some background task might be ran. So it is hard to tell which way is better
 on my computer.
-when the data size for each file are difference, the difference of the performance are hard to tell.
+when the data size for each file are difference, the differences of the two performance are hard to tell.
 
 －－－－－－－－－file writing result－－－ －－－－－－－－－－－－
 
@@ -345,7 +345,6 @@ Total time --fork/join took 0.918 Second
 
 reference:
 1. http://blog.takipi.com/forkjoin-framework-vs-parallel-streams-vs-executorservice-the-ultimate-benchmark/
-
 2. http://www.infoq.com/articles/forkjoin-to-parallel-streams
 
 ...

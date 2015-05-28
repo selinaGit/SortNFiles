@@ -29,6 +29,9 @@ I implemented write files by fork/join version. The speed was much slower than t
 1). Sort each file
 2). Merge all sorted LinkedList contain file data by Priority Queue
 
+
+
+
 There are a lot discussion on Stream or Fork-Join. The performance could be vary according to CPU, Memory size and data distributed ways
 
 ATTENTION:
@@ -70,9 +73,19 @@ Reference below.
 ```
 Limitation:
 With limited time, some codes are duplicated and not optimized
-－－－－－－－－－－－－
 
-Start to generat files from 01.txt to 100.txt at ./output/
+Result:
+Writing 100 files take around 4-6 seconds
+Soring 10 files take around 0.94 - 2.7 Seconds by Stream process
+Soring 10 files take around 0.91 - 2.1 Seconds by fork-join framework
+
+Since I tested this by my personal computer, some background task might be ran. So it is hard to tell which way is better
+on my computer.
+when the data size for each file are difference, the difference of the performance are hard to tell.
+
+－－－－－－－－－file writing result－－－ －－－－－－－－－－－－
+
+Start to generate files from 01.txt to 100.txt at ./output/
 writeInputDocument in 0.045 Second
 writeInputDocument in 0.019 Second
 writeInputDocument in 0.011 Second
@@ -175,7 +188,9 @@ writeInputDocument in 0.007 Second
 writeInputDocument in 0.007 Second
 createAllDocuments 100 FILES in 4.831 Second
 
--------------------------------------------------------
+--------------file reading and sort result-----------------------------------------
+mvn exec:java -Dexec.mainClass="dev.fun.Main" -Dexec.args="-s ./input/"
+
 Start to read and sort data files from 01.txt to 10.txt at ./input/
 Read a File Time = 0.003 Second, Sort a File Time = 0.42 Second
 Read a File Time = 0.0 Second, Sort a File Time = 0.193 Second
@@ -247,7 +262,9 @@ Read All Files and Sort Separately Time = 0.487 Second
 MergeSort All Files and Write to One File Time  = 0.457 Second
 Total Time = 0.944
 
---------------------------------------------------------------------
+--------------file reading and sort result-----------------------------------------
+mvn exec:java -Dexec.mainClass="fork.join.MergeMain" -Dexec.args="-s ./input/"
+
 
 Start to read and sort data files from 01.txt to 10.txt at ./input/
 Read a File Time = 0.045 Second
@@ -327,7 +344,8 @@ Total time --fork/join took 0.918 Second
 ```
 
 reference:
-http://blog.takipi.com/forkjoin-framework-vs-parallel-streams-vs-executorservice-the-ultimate-benchmark/
-http://www.infoq.com/articles/forkjoin-to-parallel-streams
+1. http://blog.takipi.com/forkjoin-framework-vs-parallel-streams-vs-executorservice-the-ultimate-benchmark/
+
+2. http://www.infoq.com/articles/forkjoin-to-parallel-streams
 
 ...
